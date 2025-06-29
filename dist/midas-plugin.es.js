@@ -178,6 +178,7 @@ function makeRunNumberTable(_ref) {
             color: 'red'
           }
         }, "Error: ", error);
+        var displayValue = runNumber < 0 ? 'waiting for start of next run' : runNumber;
         return /*#__PURE__*/React.createElement("div", {
           className: "no-drag",
           style: {
@@ -196,7 +197,7 @@ function makeRunNumberTable(_ref) {
           style: tdStyle
         }, "Run Number"), /*#__PURE__*/React.createElement("td", {
           style: tdStyle
-        }, runNumber)))));
+        }, displayValue)))));
       }
     }], [{
       key: "settingSchema",

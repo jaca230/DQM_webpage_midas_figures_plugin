@@ -49,6 +49,10 @@ export default function makeRunNumberTable({ Table, SettingTypes }) {
       if (loading) return <div>Loading...</div>;
       if (error) return <div style={{ color: 'red' }}>Error: {error}</div>;
 
+      const displayValue = runNumber < 0
+        ? 'waiting for start of next run'
+        : runNumber;
+
       return (
         <div className="no-drag" style={{ overflowX: 'auto' }}>
           <table style={{ borderCollapse: 'collapse', width: '100%' }}>
@@ -58,7 +62,7 @@ export default function makeRunNumberTable({ Table, SettingTypes }) {
             <tbody>
               <tr>
                 <td style={tdStyle}>Run Number</td>
-                <td style={tdStyle}>{runNumber}</td>
+                <td style={tdStyle}>{displayValue}</td>
               </tr>
             </tbody>
           </table>
@@ -68,5 +72,14 @@ export default function makeRunNumberTable({ Table, SettingTypes }) {
   };
 }
 
-const thStyle = { borderBottom: '2px solid #ccc', padding: '8px', textAlign: 'left', backgroundColor: '#f5f5f5' };
-const tdStyle = { borderBottom: '1px solid #ddd', padding: '8px' };
+const thStyle = {
+  borderBottom: '2px solid #ccc',
+  padding: '8px',
+  textAlign: 'left',
+  backgroundColor: '#f5f5f5',
+};
+
+const tdStyle = {
+  borderBottom: '1px solid #ddd',
+  padding: '8px',
+};

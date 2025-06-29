@@ -181,6 +181,7 @@ var PluginRegister = (function () {
               color: 'red'
             }
           }, "Error: ", error);
+          var displayValue = runNumber < 0 ? 'waiting for start of next run' : runNumber;
           return /*#__PURE__*/React.createElement("div", {
             className: "no-drag",
             style: {
@@ -199,7 +200,7 @@ var PluginRegister = (function () {
             style: tdStyle
           }, "Run Number"), /*#__PURE__*/React.createElement("td", {
             style: tdStyle
-          }, runNumber)))));
+          }, displayValue)))));
         }
       }], [{
         key: "settingSchema",
