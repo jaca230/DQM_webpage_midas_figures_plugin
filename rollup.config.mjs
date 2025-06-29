@@ -17,7 +17,7 @@ export default [
   {
     input: 'index.js',
     output: {
-      file: 'dist/nalu-plugin.iife.js',
+      file: 'dist/midas-plugin.iife.js',
       format: 'iife',
       name: 'PluginRegister', // Must set this global
       globals: {
@@ -32,7 +32,7 @@ export default [
   {
     input: 'index.js',
     output: {
-      file: 'dist/nalu-plugin.es.js',
+      file: 'dist/midas-plugin.es.js',
       format: 'es',
     },
     external: ['react', 'react-dom'],
